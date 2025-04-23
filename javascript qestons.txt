@@ -1,0 +1,104 @@
+JavaScript Interview Questions and Answers
+Basic Questions
+- What are the different data types in JavaScript?- JavaScript has the following data types:- Primitive: String, Number, Boolean, Undefined, Null, BigInt, Symbol
+- Non-Primitive: Object (including Arrays and Functions)
+
+
+- What is the difference between var, let, and const?- var: Function-scoped, can be redeclared, and hoisted.
+- let: Block-scoped, cannot be redeclared, and not hoisted.
+- const: Block-scoped, cannot be redeclared or reassigned.
+
+- What is a closure in JavaScript?- A closure is a function that retains access to its outer scope even after the outer function has executed.
+
+Intermediate Questions 
+
+4. What is the difference between == and ===?
+- ==: Compares values after type coercion.
+- ===: Compares values and types without coercion.
+
+- What is the purpose of the this keyword?- this refers to the object that is currently executing the function. Its value depends on how the function is called.
+
+- What is the event loop in JavaScript?- The event loop is a mechanism that handles asynchronous operations by placing them in a queue and executing them after the main thread is free.
+
+
+Advanced Questions 
+
+7. What is the difference between call(), apply(), and bind()?
+- call(): Invokes a function with a specified this value and arguments passed individually.
+- apply(): Similar to call(), but arguments are passed as an array.
+- bind(): Returns a new function with a specified this value and arguments.
+
+- What are Promises in JavaScript?- Promises are used to handle asynchronous operations. They have three states: Pending, Resolved, and Rejected.
+
+- What is the difference between null and undefined?- null: Explicitly assigned to indicate no value.
+- undefined: Automatically assigned to uninitialized variables.
+
+- What is the difference between synchronous and asynchronous programming?- Synchronous: Code is executed line by line, blocking further execution until the current task is complete.
+- Asynchronous: Code execution continues without waiting for the current task to complete (e.g., using callbacks, Promises, or async/await).
+
+
+ES6 (ECMAScript 2015) Features
+- Let & Const- let and const introduced block-scoping, replacing var for better control over variable scope.
+let x = 10;
+const y = 20;
+
+- Arrow Functions- Shorter syntax for defining functions.
+const add = (a, b) => a + b;
+
+- Template Literals- Using backticks (``) for string interpolation.
+const name = "Milan";
+console.log(`Hello, ${name}!`);
+
+- Destructuring Assignment- Extract values from arrays and objects easily.
+const person = { name: "Milan", age: 25 };
+const { name, age } = person;
+
+- Default Parameters- Assign default values to function parameters.
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}!`);
+}
+
+- Rest & Spread Operators (...)- Rest: Collects arguments into an array.
+- Spread: Expands elements into individual values.
+function sum(...nums) {
+  return nums.reduce((acc, num) => acc + num, 0);
+}
+
+- Classes- Introduced object-oriented programming concepts.
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+
+- Promises- Used for asynchronous programming.
+const fetchData = () => new Promise(resolve => resolve("Data Loaded"));
+fetchData().then(console.log);
+
+- Modules (import & export)- Enables modular JavaScript code.
+export const sayHello = () => console.log("Hello!");
+import { sayHello } from './module.js';
+
+
+ES7 (ECMAScript 2016) Features
+- Array .includes() Method- Checks if an array contains an element.
+const numbers = [1, 2, 3, 4];
+console.log(numbers.includes(3)); // true
+
+- Exponentiation Operator (**)- A shorthand for Math.pow().
+console.log(2 ** 3); // 8
+
+
+These updates paved the way for modern JavaScript development, making code more efficient and readable.
+
+Once you've saved the file, you can easily access it anytime! Let me know if you need any modifications or further details. 😊
+
+
+
+
+
+
+

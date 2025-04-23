@@ -1,0 +1,42 @@
+The fat arrow (=>) in JavaScript is used in arrow functions, introduced in ES6. These functions provide a shorter and more concise syntax compared to traditional function expressions.
+Syntax:
+const add = (a, b) => a + b;
+console.log(add(3, 5)); // Output: 8
+
+
+Here, the function does not require the function keyword and returns the sum of a and b automatically.
+
+Key Features of Arrow Functions
+- Concise Syntax:- Regular function:function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+- Arrow function:const greet = name => `Hello, ${name}!`;
+
+
+- Implicit Return:- If the function has only one expression, it automatically returns the result without needing {} or return.const square = num => num * num;
+console.log(square(4)); // Output: 16
+
+
+- Lexical this (No Rebinding of this)- Arrow functions do not have their own this; they inherit it from the surrounding scope.
+const person = {
+  name: "Milan",
+  sayName: function() {
+    setTimeout(() => {
+      console.log(`My name is ${this.name}`);
+    }, 1000);
+  }
+};
+person.sayName(); // Output: My name is Milan
+- In contrast, a regular function would require .bind(this) to access the correct this.
+
+- Cannot be Used with new (No Constructor)- Arrow functions do not have the prototype property and cannot be used as constructors.
+const Person = name => { this.name = name; }; // ❌ Error
+
+
+
+When to Use Arrow Functions?
+✅ When you need a shorter function syntax.
+✅ When you want lexical this behavior in callbacks.
+❌ Avoid using arrow functions as methods in objects or constructors.
+Would you like more advanced examples or comparisons? 😊

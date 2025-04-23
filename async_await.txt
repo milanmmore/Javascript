@@ -1,0 +1,76 @@
+Async/Await in JavaScript
+1. Understanding async Functions
+- An async function always returns a Promise.
+- Inside an async function, you can use await to pause execution until a Promise resolves.
+
+Example:
+async function fetchData() {
+  return "Data received!";
+}
+
+fetchData().then(console.log); // Output: Data received!
+
+
+Here, fetchData() automatically returns a Promise.
+
+2. Using await to Handle Asynchronous Code
+- The await keyword makes JavaScript wait for the Promise to resolve before continuing execution.
+
+Example:
+async function fetchData() {
+  let response = await new Promise(resolve => setTimeout(() => resolve("Data Loaded"), 2000));
+  console.log(response);
+}
+
+fetchData(); // Output (after 2 seconds): Data Loaded
+
+
+Execution is paused at await until the Promise resolves.
+
+3. Error Handling with try...catch
+Using try...catch inside an async function helps handle errors gracefully.
+async function fetchData() {
+  try {
+    let response = await fetch("https://api.example.com/data");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchData();
+
+
+If the request fails, the error is caught inside catch, preventing uncaught exceptions.
+
+4. Async/Await vs Promises
+Here’s a comparison between Promise chaining and Async/Await:
+Using Promises (.then() and .catch())
+fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
+
+
+Using Async/Await
+async function getData() {
+  try {
+    let response = await fetch("https://api.example.com/data");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+getData();
+
+
+Both methods achieve the same result, but async/await improves readability by avoiding nested .then() calls.
+
+5. Benefits of Async/Await
+✅ Improves readability
+✅ Eliminates .then() chaining
+✅ Easier error handling using try...catch
+✅ Works well with APIs and asynchronous tasks

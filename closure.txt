@@ -1,0 +1,74 @@
+Write a javascript function named is_integer which checks if the passed argument is an integer. You can use any mathematical operator or functions defined in the Math object.
+Using the forEach function defined for an array, find the sum of the array of numbers. [function add_all(arr) {...}]
+Write a JavaScript program to convert temperatures to and from celsius, fahrenheit. [ Use the formula : c/5 = (f-32)/9, where c = temperature in celsius and f = temperature in fahrenheit]
+Write a factorial function that returns the factorial of a given number, n. Make sure you return the calculated value and not just print it. [function factorial(n){...}]
+Write a javascript function that converts a given amount of money into coins of denominations (1, 2, 5, 10 and 25). [function convert_to_coins(amount) {...}]. You may choose to print the coin denominations used on the console. E.g. convert_to_coins(87) should print 25 25 25 10 2.
+Resources for this lecture
+
+closures 
+
+Closures in JavaScript are a powerful feature that allow a function to retain access to its scope even after the outer function in which it was defined has finished executing. In essence, closures are created whenever a function is defined inside another function and gains access to the outer function's variables.
+Here's how closures work:
+
+function outerFunction() {
+  let outerVariable = "I'm from the outer scope";
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+const closureExample = outerFunction();
+closureExample(); // Output: "I'm from the outer scope"
+
+In this example:
+- outerFunction creates a variable (outerVariable) and returns innerFunction.
+- Even though outerFunction has finished execution, the innerFunction retains access to outerVariable through the closure.
+
+Closures are commonly used in JavaScript for tasks like data encapsulation, maintaining state, creating private variables, and callbacks. They are an essential concept for understanding how JavaScript handles scope and memory.
+Let me know if you'd like me to explain it further or provide some more practical examples! 😊
+
+Alright, let’s explore closures with a practical example to make things even clearer! Here's a scenario where closures can be handy: creating a counter function that maintains its own state.
+function createCounter() {
+  let count = 0; // This is the private variable
+
+  return function () {
+    count++;
+    console.log(`Current count: ${count}`);
+  };
+}
+
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+counter1(); // Output: Current count: 1
+counter1(); // Output: Current count: 2
+counter2(); // Output: Current count: 1
+
+
+What’s happening here?
+- Private Variable (count): The count variable is defined in the outer function createCounter.
+- Returned Function: The inner anonymous function has access to count, even though createCounter has completed execution.
+- Independent Counters: Each call to createCounter creates a new closure with its own separate count variable. That's why counter1 and counter2 maintain different counts.
+
+This makes closures great for data encapsulation! Here's another common use case: event listeners.
+function setupEventLogger(eventName) {
+  return function () {
+    console.log(`Event logged: ${eventName}`);
+  };
+}
+
+const logClick = setupEventLogger("click");
+const logHover = setupEventLogger("hover");
+
+document.addEventListener("click", logClick); // Logs: Event logged: click
+document.addEventListener("mouseover", logHover); // Logs: Event logged: hover
+
+
+Why use closures in event handling?
+In the example above, logClick and logHover remember the eventName variable through closures, ensuring that the correct event name is logged for each listener.
+Closures are incredibly versatile! Let me know if you'd like to dig deeper or see more advanced applications. 😊
+
+

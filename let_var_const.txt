@@ -1,0 +1,65 @@
+Var vs Let vs Const in JavaScript
+1. var
+- Scope: Function-scoped (not block-scoped).
+- Hoisting: Gets hoisted to the top, but initialized as undefined.
+- Reassignment: Can be redeclared and reassigned.
+- Issues: Can lead to unintended bugs due to its lack of block scope.
+
+Example:
+var x = 10;
+console.log(x); // Output: 10
+
+var x = 20; // Redeclaration allowed
+console.log(x); // Output: 20
+
+
+
+2. let
+- Scope: Block-scoped.
+- Hoisting: Gets hoisted but does not get initialized (cannot be used before declaration).
+- Reassignment: Can be reassigned but not redeclared in the same scope.
+- Use case: Preferred for variables that will be reassigned.
+
+Example:
+let y = 15;
+console.log(y); // Output: 15
+
+y = 25; // Allowed
+console.log(y); // Output: 25
+
+// let y = 30;  // Error! Cannot redeclare
+
+
+
+3. const
+- Scope: Block-scoped.
+- Hoisting: Gets hoisted but does not get initialized.
+- Reassignment: Cannot be reassigned or redeclared.
+- Use case: Preferred for constants that should never change.
+
+Example:
+const z = 50;
+console.log(z); // Output: 50
+
+// z = 60; // Error! Cannot reassign
+// const z = 70; // Error! Cannot redeclare
+
+
+
+Key Differences
+| Feature | var | let | const | 
+| Scope | Function | Block | Block | 
+| Hoisting | Yes (initialized as undefined) | Yes (not initialized) | Yes (not initialized) | 
+| Redeclaration | ✅ Yes | ❌ No | ❌ No | 
+| Reassignment | ✅ Yes | ✅ Yes | ❌ No | 
+| Recommended? | 🚫 No (can cause bugs) | ✅ Yes (for variables that change) | ✅ Yes (for constants) | 
+
+
+
+Best Practices
+- Use let when the variable needs to be updated.
+- Use const for values that should remain unchanged.
+- Avoid var, unless specifically required for legacy code.
+
+
+
