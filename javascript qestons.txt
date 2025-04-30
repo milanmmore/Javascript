@@ -96,6 +96,30 @@ These updates paved the way for modern JavaScript development, making code more 
 
 Once you've saved the file, you can easily access it anytime! Let me know if you need any modifications or further details. 😊
 
+00:21 - Can a JavaScript object hold a function as a property? Explain with an example.
+
+03:28 - What are anonymous functions in JavaScript? Define their syntax and implementation.
+
+07:22 - What is the difference between var, const, and let? Explain with an example.
+
+16:26 - Where are the push, pop, slice, shift, and unshift methods used when accessing array elements?
+
+23:19 - Is JavaScript Asynchronous? Prove with an example.
+
+27:53 - What are callback functions in JavaScript?
+
+38:09 - What are promises in JavaScript? Explain the difference between callback functions and promises with an example.
+
+49:15 - Create an inheritance relationship between a parent and child class. Invoke the parent constructor from the child class. Create main.js to call parent class methods from a child class object.
+
+55:21 - From the above code, explain how the super and these keywords help achieve the solution.
+
+01:00:05 - What is the difference between == and ===?
+
+01:03:32 - What is the difference between null and undefined in JavaScript?
+
+01:06:36 - A classic programming interview question that involves using array methods (filter, map, reduce), and JavaScript objects.
+
 
 
 
